@@ -19,7 +19,7 @@ schoolroutes.post("/addSchool",async(req,res)=>{
         res.json({message: "School added successfully", schoolId: result.insertId });
 
     } catch (error) {
-        // res.status(500).json({error:"Database error"});
+        
         console.error(error);
         res.status(500).json({ error: error.message });
     }
@@ -57,7 +57,7 @@ schoolroutes.get("/listSchools", async (req,res)=>{
 
         res.json(schoolsWithDistance);
     } catch (error) {
-        res.statusMessage(500).json({error: "Database error"});
+        res.status(500).json({error: "Database error"});
     }
 });
 
